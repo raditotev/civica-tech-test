@@ -15,15 +15,18 @@ Then(/^I am logged in$/) do
 end
 
 Given(/^Amazon\.co\.uk is open and I am logged in$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  home_page.load
+  home_page.go_to_login
+  sign_in_page.log_in
 end
 
-When(/^I search for laptop$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+When(/^I search for (\w+)$/) do |item|
+  @item = item.downcase
+  home_page.search_for item
 end
 
 Then(/^the first result has the word laptop in it$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(search_results_page.first_product_title).to include @item
 end
 
 And(/^I add laptop ASUS ZenBook UX330UA-FB100T to my basket$/) do
