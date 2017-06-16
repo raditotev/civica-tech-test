@@ -1,17 +1,17 @@
 Given(/^Amazon\.co\.uk is open$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  home_page.load
 end
 
 When(/^I click Sign\-in$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  home_page.go_to_login
 end
 
-And(/^enter valid user name password$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+And(/^enter valid user name and password$/) do
+  sign_in_page.log_in
 end
 
 Then(/^I am logged in$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content('Hello, Test')
 end
 
 Given(/^Amazon\.co\.uk is open and I am logged in$/) do

@@ -2,11 +2,11 @@ Feature: Shop online at Amazon.co.uk
 	As amazon registered user
 	I want to be able to purchase goods online
 	So I can save money and time
-
+@radi
 	Scenario: Sign into Amazon.co.uk
 	Given Amazon.co.uk is open
 	When I click Sign-in
-	And enter valid user name password
+	And enter valid user name and password
 	Then I am logged in
 
 
