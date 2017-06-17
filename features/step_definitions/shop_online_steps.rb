@@ -1,9 +1,9 @@
-Given(/^Amazon\.co\.uk is open$/) do
+Given(/^Amazon.co.uk is open$/) do
   home_page.load
 end
 
-When(/^I click Sign\-in$/) do
-  home_page.go_to_login
+When(/^I click Sign-in$/) do
+  navigate.to_login
 end
 
 And(/^enter valid user name and password$/) do
@@ -11,12 +11,12 @@ And(/^enter valid user name and password$/) do
 end
 
 Then(/^I am logged in$/) do
-  expect(page).to have_content('Hello, Test')
+  expect(home_page).to have_greeting
 end
 
-Given(/^Amazon\.co\.uk is open and I am logged in$/) do
+Given(/^Amazon.co.uk is open and I am logged in$/) do
   home_page.load
-  home_page.go_to_login
+  navigate.to_login
   sign_in_page.log_in
 end
 
@@ -37,7 +37,7 @@ And(/^I add laptop (.+) to my basket$/) do |product|
 end
 
 When(/^I check my basket total$/) do
-  home_page.go_to_basket
+  navigate.to_basket
   @subtotal = basket_page.get_subtotal
 end
 

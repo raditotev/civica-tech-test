@@ -4,6 +4,10 @@ class SearchResultsPage < SitePrism::Page
   end
 
   def select_first_item
-    page.first(:css, 'div.s-item-container a').click
+    # Select first result unless it's a sponsored link
+    page.all('div.s-item-container').each do |el|
+      next if el.has_content?("Sponsored")
+      el.first("h2").click
+    end
   end
 end

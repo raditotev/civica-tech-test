@@ -1,17 +1,8 @@
 class HomePage < SitePrism::Page
   set_url "http://www.amazon.co.uk"
-  element :sign_in_button, "#nav-link-yourAccount"
   element :search_box , "#twotabsearchtextbox"
   element :search_button, "div.nav-search-submit input[type='submit']"
-  element :cart_button, "#nav-cart"
-
-  def go_to_login
-    sign_in_button.click
-  end
-
-  def go_to_basket
-    cart_button.click
-  end
+  element :greeting, "#nav-link-yourAccount"
 
   def search_for item
     search_box.set item

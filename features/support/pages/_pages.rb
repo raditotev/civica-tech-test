@@ -18,4 +18,8 @@ module Pages
   def basket_page
     @basket_page ||= BasketPage.new
   end
+
+  def navigate
+    @navigate ||= Navigate.new
+  end
 end
