@@ -10,6 +10,9 @@ World(Pages)
 
 Capybara.default_driver = :selenium
   Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  Capybara::Selenium::Driver.new(app, :browser => ENV['BROWSER'].to_sym)
 end
 
+SitePrism.configure do |config|
+  config.use_implicit_waits = true
+end

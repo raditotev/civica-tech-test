@@ -34,6 +34,7 @@ And(/^I add laptop (.+) to my basket$/) do |product|
   search_results_page.select_first_item
   @product_price = view_product_page.get_price
   view_product_page.add_item_to_basket
+  basket_page.wait_for_confirm_text
 end
 
 When(/^I check my basket total$/) do

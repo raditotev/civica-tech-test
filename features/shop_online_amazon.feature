@@ -14,6 +14,7 @@ Feature: Shop online at Amazon.co.uk
 	When I search for laptop
 	Then the first result has the word laptop in it
 
+	@reset_cart
 	Scenario: Verify that the original price of the product matches the price seen in the basket
 	Given Amazon.co.uk is open and I am logged in
 	And I add laptop ASUS ZenBook UX330UA-FB100T to my basket
