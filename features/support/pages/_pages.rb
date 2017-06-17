@@ -10,4 +10,12 @@ module Pages
   def search_results_page
     @search_results_page ||= SearchResultsPage.new
   end
+
+  def view_product_page
+    @view_product_page ||= ViewProductPage.new
+  end
+
+  def basket_page
+    @basket_page ||= BasketPage.new
+  end
 end

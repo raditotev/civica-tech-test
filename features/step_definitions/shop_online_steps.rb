@@ -29,14 +29,18 @@ Then(/^the first result has the word laptop in it$/) do
   expect(search_results_page.first_product_title).to include @item
 end
 
-And(/^I add laptop ASUS ZenBook UX330UA-FB100T to my basket$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+And(/^I add laptop (.+) to my basket$/) do |product|
+  home_page.search_for product
+  search_results_page.select_first_item
+  @product_price = view_product_page.get_price
+  view_product_page.add_item_to_basket
 end
 
 When(/^I check my basket total$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  home_page.go_to_basket
+  @subtotal = basket_page.get_subtotal
 end
 
 Then(/^it should match the price of the laptop$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(@product_price).to eq @subtotal
 end
