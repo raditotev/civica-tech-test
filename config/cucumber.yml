@@ -1,0 +1,3 @@
+default: "BROWSER=chrome"
+
+firefox: "BROWSER=firefox"
