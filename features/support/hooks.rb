@@ -6,7 +6,9 @@ After do |scenario|
       while basket_page.has_delete_button?
         begin
           basket_page.delete_button.click
-        rescue Selenium::WebDriver::Error::StaleElementReferenceError
+        rescue Selenium::WebDriver::Error::StaleElementReferenceError,
+               Capybara::ElementNotFound
+          # If element doesn't exists - shopping cart is empty
           puts "Cart is empty now."
         end
       end
