@@ -2,12 +2,12 @@
 
 ### Setup
 
-Install ruby 2.4.1 
-Clone this repository locally `git clone git@github.com:raditotev/civica-tech-test.git`
-Install bundler `gem install bundler`
+Install ruby 2.4.1  
+Clone this repository locally `git clone git@github.com:raditotev/civica-tech-test.git`  
+Install bundler `gem install bundler`  
 Install gems `bundle install`
 
-Tests are run by default on chrome browser. You need to have it installed. 
+Tests are run by default on chrome browser. You need to have it installed.  
 If you want to run the tests on Firefox you'll need to have this browser installed as well.
 
 ### Running tests
