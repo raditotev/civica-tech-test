@@ -1,3 +1,5 @@
+# Creates instances of sign in page,
+# allowing user login
 class SignInPage < SitePrism::Page
   element :username, "#ap_email"
   element :password, "#ap_password"

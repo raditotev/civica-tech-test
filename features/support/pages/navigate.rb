@@ -1,3 +1,5 @@
+# Creates navigate instances,
+# providing methods to navigate website
 class Navigate < SitePrism::Page
   element :sign_in_button, "#nav-link-yourAccount"
   element :cart_button, "#nav-cart"

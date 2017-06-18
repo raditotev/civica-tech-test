@@ -1,3 +1,5 @@
+# Creates or calls instances of pages used in tests.
+# Included in step defintions through Cucumber's Wolrd object
 module Pages
   def home_page
     @home_page ||= HomePage.new

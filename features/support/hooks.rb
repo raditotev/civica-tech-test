@@ -1,4 +1,5 @@
 After do |scenario|
+  # Remove items from shopping cart
   if scenario.source_tag_names.include?('@reset_cart')
     unless basket_page.cart_empty?
       navigate.to_basket unless basket_page.current_page?
