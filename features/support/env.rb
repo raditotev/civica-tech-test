@@ -11,7 +11,7 @@ World(Pages)
 
 # Set default driver and start a new instance
 Capybara.default_driver = :selenium
-  Capybara.register_driver :selenium do |app|
+Capybara.register_driver :selenium do |app|
   Capybara::Selenium::Driver.new(app, :browser => ENV['BROWSER'].to_sym)
 end
 

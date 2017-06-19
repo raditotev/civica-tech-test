@@ -23,6 +23,7 @@ end
 When(/^I search for (\w+)$/) do |item|
   @item = item.downcase
   home_page.search_for item
+  search_results_page.wait_for_search_results
 end
 
 Then(/^the first result has the word laptop in it$/) do
@@ -31,6 +32,7 @@ end
 
 And(/^I add laptop (.+) to my basket$/) do |product|
   home_page.search_for product
+  search_results_page.wait_for_search_results
   search_results_page.select_first_item
   @product_price = view_product_page.get_price
   view_product_page.add_item_to_basket

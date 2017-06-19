@@ -11,4 +11,8 @@ class HomePage < SitePrism::Page
     search_box.set item
     search_button.click
   end
+
+  def wait_for_page_finish_loading
+    wait_for_greeting
+  end
 end
